@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Welcome To Coursou</title>
+    
+    <style>
+        html { 
+  background: url("img/coursou.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+        .center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        header {
+            position: relative;
+            
+        }
+        .header-bg {
+            position: relative;
+            display: flex;
+            padding-bottom: 2vh;
+        }
+        .header-bg img {
+            max-width: 15vw;
+            max-height: 30vh;
+            flex: 1;
+        }
+
+        h1 {
+            position: relative;
+            text-align: center;
+            color: wheat;
+            letter-spacing: 1vw;
+            font-weight: 700;
+            font-size: 1.6em;
+            z-index: 2;
+        }
+
+        video {
+            position: relative;
+            top: 5%;
+            height: 60vh;
+            left: 50%; transform: translateX(-50%);
+            border-radius: 20px;
+            box-shadow: 0 0 5px 5px rgb(238, 235, 235);
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-bg center">
+            <img src="img/logo.png" alt="logo">
+            <img src="img/logo.png" alt="logo">
+            <img src="img/logo.png" alt="logo">
+            <img src="img/logo.png" alt="logo">
+            <img src="img/logo.png" alt="logo">
+        </div>
+        <h1>
+            古颂网站升级中 敬请期待
+        </h1>
+    </header>
+    <video height="" src="vid/vid.mp4" controls autoplay>
+        <source src="vid/vid.mp4" type="video/mp4">
+    </video>
+</body>
+</html>

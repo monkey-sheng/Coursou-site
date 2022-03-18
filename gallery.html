@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>古颂庄-酒品展示</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0%; padding: 0%; background-color: black;
+        }
+        header {
+            display: flex;  align-items: center; width: 100%;
+            padding:1% 2% 1% 5%; background-color: rgb(41, 3, 3);
+        }
+        .logo {
+            display: flex; justify-content: center; align-items: center;
+            /* padding-right: 20%; */
+        }
+        .logo img {
+            max-width: 20vw; max-height: 20vh;
+        }
+        nav {
+            font-size: 25px; letter-spacing: 5px;
+            flex-grow: 1;
+        }
+        ul {
+            list-style-type: none;
+            display: flex; flex-wrap: wrap; justify-content: space-around; align-items: center;
+            width: 100%;
+            flex: 1;
+            border-radius: 2px; /*background-color: rgb(41, 3, 3);*/
+            /* padding: 3vh 5vw; */
+        }
+        ul li {
+            padding: 10px 18px; margin: 14px 5px;
+            /* border: 3px double green; */
+            /* background-color: aqua; */
+            transition: all 0.5s;
+        }
+        ul li:hover, ul li:active, ul li.active {
+            background-color: white; color: rgb(41, 3, 3); box-shadow: grey 0px 0px 5px 5px;
+        }
+        ul li a {
+            text-decoration: none;color: white; transition: all .5s;
+        }
+        ul li:hover a, ul li:active a, ul li.active a{
+            color:black;
+        }
+        
+        h1 {text-align: center; color: wheat; letter-spacing: 1vw;}
+        .gallery-container {
+            display: grid; grid-template-columns: repeat(2, 1fr); gap: 15vh 10vw;
+            /* display: flex; justify-content: center; flex-wrap: wrap; */
+            /* align-items: center; prevents gallery-item on the same line from moving up and down when show-all*/
+            padding: 0% 10% 2% 10%;
+        }
+        .gallery-item {
+            width: 25vw; margin: 5% 5vw; height: auto;
+        }
+        .gallery-item img {width: 100%; filter: drop-shadow(0px 0px 10px rgba(245,222,179,0.5));}
+        .gallery-item .brief {
+            color: wheat;
+            text-align: center;
+            font-size: 1.5em;
+        }
+        .gallery-item .show-all {
+            padding: 5px 15px;
+            /* margin-left: auto; margin-right: 0px; */
+            width: 100%; text-align: right;
+            color: cornflowerblue;
+            /* font-size: 1.8em; */
+            /* background-color: wheat; */
+            /* box-shadow: 0px 0px 3px 3px grey ; */
+            /* float: right; */
+            cursor: pointer;
+        }
+        .gallery-item .verbose {
+            overflow: auto;
+            max-height: 0px;
+            transition: all 0.6s;
+        }
+        .gallery-item p {padding: 15px 5px; color: wheat; clear: both;}
+
+        .tab {
+            display: flex; justify-content: space-around; align-items: center;
+            width: 60vw;
+            margin-left: auto; margin-right: auto;
+            padding-bottom: 8px;
+            border-bottom: 4px double wheat;
+        }
+        .tab button {
+            padding: 16px 8px; margin: 0% ;
+            border-radius: 100%;
+            background-color: black;
+            color: wheat;
+            font-size: 2em; font-weight: bolder;
+            outline: none; border: none;
+            transition: all 0.3s;
+        }
+        .tab button:hover, .tab button.active {background-color: wheat; color: black;}
+        
+        .tab-content {
+            display: none;
+            animation: fade 0.8s;
+        }
+        @keyframes fade {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+
+
+        
+        @media screen and (max-width: 1000px) {
+            header {
+                padding: 1% 2%;
+            }
+            .logo img {
+                max-width: 30vw;
+            }
+            nav {
+                font-size: 60px;
+                letter-spacing: 3px;
+            }
+            ul li {
+                padding: 25px 18px; margin: 2px 5px;
+            }
+
+            .gallery-container {grid-template-columns: repeat(1, 1fr); justify-items: center; gap: 5vh 5vw;}
+
+            .gallery-item {width: 80vw; height: auto; margin: 0 5vw;}
+            .gallery-item .brief {font-size: 2.4em;}
+            .gallery-item p {font-size: 1.7em;}
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="img/logo.png" alt="logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">首页</a></li>
+                <li class="active"><a href="gallery.html">酒品展示</a></li>
+                <li><a href="contact.html">联系古颂</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <h1>酒品展示</h1>
+
+    <div class="tab">
+        <button class="tab-btn" id="tab-open-all" onclick="openTab(event, 'all')">全部</button>
+        <button class="tab-btn" onclick="openTab(event, 'red')">红葡萄酒</button>
+        <button class="tab-btn" onclick="openTab(event, 'white')">白葡萄酒</button>
+    </div>
+
+    
+    <div class="tab-content" id="red">
+        <div class="gallery-container">
+            <div class="gallery-item">
+                <img src="img/gallery/cc2015red.png" alt="cc2015red">
+                <div class="desc-container">
+                    <div class="brief">
+                        古颂庄2015
+                    </div>
+                    <div class="show-all" onclick="showAll(event)" data-toggle="show">展开</div>
+                    <div class="verbose">
+                        <p>这是古颂庄的经典酒款，多年来得到各方好评。优雅的酒标更使人眼前一亮。<br>无论是自己品尝或是送礼待客都是上好的选择。</p>
+                    </div>  
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="img/gallery/cc-premium.png" alt="cc-premium">
+                <div class="desc-container">
+                    <div class="brief">
+                        古颂精选
+                    </div>
+                    <div class="show-all" onclick="showAll(event)" data-toggle="show">展开</div>
+                    <div class="verbose">
+                        <p>古颂精选，价格诱人。<br>对于入门是极好的选择。</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="img/gallery/cc2016.png" alt="cc2016">
+                <div class="desc-container">
+                    <div class="brief">
+                        古颂2016
+                    </div>
+                    <div class="show-all" onclick="showAll(event)" data-toggle="show">展开</div>
+                    <div class="verbose">
+                        <p>古颂2016在性价比方面更胜2015款一筹。<br>若是想在闲暇时品鉴美酒值得一试。</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="tab-content" id="white">
+        <div class="gallery-container">
+            <div class="gallery-item">
+                <img src="img/gallery/typic.png" alt="typic">
+                <div class="desc-container">
+                    <div class="brief">甜白TYPIC</div>
+                    <div class="show-all" onclick="showAll(event)" data-toggle="show">展开</div>
+                    <div class="verbose">
+                        <p>古颂庄的经典甜白系列，受到许多年轻女性的赞赏和青睐。<br>十分适合在轻松的场景与众人一同分享。</p>
+                    </div>               
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+</body>
+<script>
+    function showAll(evt) {
+        var parent = evt.currentTarget.parentElement;
+        var currentTarget = evt.currentTarget;
+        if (currentTarget.getAttribute("data-toggle") === "show") {
+            if (window.screen.width > 1000) {
+                parent.getElementsByClassName("verbose")[0].style.maxHeight = "20vh";
+            }
+            else {
+                // to keep in line with css media query
+                parent.getElementsByClassName("verbose")[0].style.maxHeight = "12vh";
+            }
+
+            currentTarget.innerHTML = "收起";
+            currentTarget.setAttribute("data-toggle", "collapse");
+        }
+        else {
+            // to collapse
+            parent.getElementsByClassName("verbose")[0].style.maxHeight = "0px";
+            currentTarget.innerHTML = "展开";
+            currentTarget.setAttribute("data-toggle", "show");
+        }
+    }
+
+    function openTab(evt, tabId) {
+        var i, tabcontent, tabBtns;
+        tabcontent = document.getElementsByClassName("tab-content");
+        tabBtns = document.getElementsByClassName("tab-btn");
+        for (i = 0; i < tabBtns.length; i++) {
+            tabBtns[i].className = tabBtns[i].className.replace(" active", "");
+        }
+
+        if (tabId === 'all') {
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "block"
+            }
+            evt.currentTarget.className += " active";
+            return;
+        }
+
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+
+        document.getElementById(tabId).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+
+    // defaults to open all tab content
+    document.getElementById("tab-open-all").click();
+</script>
+</html>

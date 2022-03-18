@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>欢迎-古颂庄</title>
+
+    <link rel="stylesheet" href="css/cinzel.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0%;
+        }
+
+        .switch-lang {
+            position: absolute;
+            z-index: 1;
+            right: 0;
+        }
+
+        .dropbtn {
+            background-color: black;
+            color: white;
+            padding: 6px;
+            font-size: 1.5vh;
+        }
+
+        .dropbtn:hover {
+            background-color: transparent;
+        }
+
+        .switch-lang:hover .dropdown-content,
+        .switch-lang:active .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+
+            min-width: 16vw;
+            overflow: auto;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            right: 0%;
+        }
+
+        .show {
+            display: block;
+        }
+
+        /* show dropdown content */
+        .dropdown-content a {
+            color: black;
+            font-size: 2vh;
+            background-color: #f1f1f1;
+            text-decoration: none;
+            text-align: center;
+            line-height: 6vh;
+            display: inline-block;
+            height: 6vh;
+            min-width: 15vw;
+            transition: all .5s;
+        }
+
+        .dropdown-content a:hover {
+            color: white;
+            background-color: rgb(41, 3, 3);
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            padding: 1% 2% 1% 5%;
+            background-color: rgb(41, 3, 3);
+        }
+
+        .logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* padding-right: 20%; */
+        }
+
+        .logo img {
+            max-width: 20vw;
+            max-height: 20vh;
+        }
+
+        nav {
+            font-size: 25px;
+            letter-spacing: 5px;
+            flex-grow: 1;
+        }
+
+        ul {
+            list-style-type: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+            width: 100%;
+            flex: 1;
+            border-radius: 2px;
+            /*background-color: rgb(41, 3, 3);*/
+            /* padding: 3vh 5vw; */
+        }
+
+        ul li {
+            padding: 10px 18px;
+            margin: 14px 5px;
+            /* border: 3px double green; */
+            /* background-color: aqua; */
+            transition: all 0.5s;
+        }
+
+        ul li:hover,
+        ul li:active, ul li.active {
+            background-color: white;
+            color: rgb(41, 3, 3); box-shadow: grey 0px 0px 5px 5px;
+        }
+
+        ul li a {
+            text-decoration: none;
+            color: white;
+            transition: all .5s;
+            font-family: Cinzel;
+
+        }
+
+        ul li:hover a,
+        ul li:active a, ul li.active a {
+            color: black;
+        }
+
+        .chateau-img {
+            height: 60vh;
+            background: url("img/coursou-small.jpg") no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        .chateau-banner {
+            margin: 1.5% 0%;
+            line-height: 100px;
+            font-size: 70px;
+            font-weight: 600;
+            text-align: center;
+            color: rgb(41, 3, 3);
+            font-family: Cinzel;
+            letter-spacing: 18px;
+            text-shadow: rgb(41, 3, 3) 2px 5px 7px;
+
+        }
+
+        .intro {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0% 2%;
+        }
+
+        .intro-text {
+            width: 40vw;
+            padding: 2vh 5vw 5vh 10vw;
+            text-align: center;
+            font-size: 18px;
+            color: rgb(100, 100, 100);;
+            font-family: Cinzel;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .intro-img-container {
+            flex: 1;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .intro-img-container img {
+            width: 43%;
+            margin: 3%;
+        }
+
+        footer {text-align: center; background-color: rgb(41, 3, 3); color: white; padding: 1vh;}
+
+
+
+        @media screen and (max-width: 1000px) {
+            header {
+                padding: 1% 2%;
+            }
+
+            /* .logo {
+                padding-right: 0%;
+            } */
+            .logo img {
+                max-width: 30vw;
+            }
+
+            nav {
+                font-size: 60px;
+                letter-spacing: 3px;
+            }
+
+            ul li {
+                padding: 25px 18px;
+                margin: 2px 5px;
+            }
+
+            .dropdown-content a {
+                min-width: 20vw;
+            }
+
+            .chateau-img {
+                height: 40vh;
+                background-size: cover;
+                background-attachment: local;
+            }
+
+            .chateau-banner {
+                margin: 4% 0;
+            }
+
+            .intro {
+                flex-direction: column-reverse;
+            }
+
+            .intro-text {
+                font-size: 1.2vh;
+                text-align: left;
+                width: 100%;
+            }
+
+            .intro-img-container img {
+                max-width: 90%;
+                max-height: 20vh;
+                margin: 3% 1%;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="switch-lang">
+        <button class="dropbtn" onclick="showLangLlist()">中文 / FR</button>
+        <div class="dropdown-content" id="dropdown-content">
+            <a href="index.html">中文</a>
+            <a href="#">Français</a>
+        </div>
+    </div>
+
+    <header>
+        <div class="logo">
+            <img src="img/logo.png" alt="">
+        </div>
+        <nav>
+            <ul>
+                <li class="active"><a href="index-en.html">HOME</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact-en.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="chateau-img">
+    </div>
+
+    <div class="chateau-banner">
+        Château Coursou
+    </div>
+    <div class="intro">
+        <div class="intro-text">
+            <p>古颂酒庄坐落在美丽的小镇贝萨克（Pessac )，距离波尔多市中心仅有68km ，距离著名的圣埃美隆酒区（St Emillion）仅10km之遥。</p>
+            <p>圣埃美隆酒区（St Emillion）和贝萨克（Pessac )产区以盛产高品质的梅洛（Merlot）而闻名于世。享有世界最好的梅洛（Merlot）(The greatest Merlot of the
+                world)的美誉。</p>
+            <p>古颂酒庄(CHATEAU
+                COURSOU)始建于18世纪初期，整个酒庄总占地38公顷，其中葡萄园占地28公顷，其余10公顷为橡树林和草地。</p>
+            <p>酒庄主体建筑距今已有近300年历史，近一百年来一直由杜巴（DUPAS）家族经营。酒庄建筑自然古朴，与周边环境浑然一体。酒庄和葡萄园位于多尔多涅河(Dordogne)右岸山丘台地和南向坡地，四周被大片上百年的橡树林环绕，自然环境十分宁静而优美。
+            </p>
+        </div>
+        <div class="intro-img-container">
+            <img src="img/vineyard.jpg" alt="vineyard">
+            <img src="img/far-view.jpg" alt="far-view">
+            <img src="img/front-view-low.jpg" alt="front-view">
+            <img src="img/organic.jpg" alt="organic">
+        </div>
+    </div>
+
+    <footer>
+        footer goes here
+    </footer>
+</body>
+<script>
+    function showLangLlist() {
+        document.getElementById('dropdown-content').classList.toggle('show');
+    }
+
+    // Close the dropdown if the user clicks outside of it when it is shown
+    window.onclick = function (event) {
+        if (!event.target.matches('.dropbtn')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            for (let i = 0; i < dropdowns.length; i++) {
+                const openDropDown = dropdowns[i];
+                if (openDropDown.classList.contains('show')) {
+                    openDropDown.classList.remove('show');
+                }
+            }
+        }
+    }
+</script>
+
+</html>

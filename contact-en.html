@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>古颂庄-联系我们</title>
+    <link rel="stylesheet" href="css/cinzel.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0%;
+            font-family: Cinzel;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            padding: 1% 2% 1% 5%;
+            background-color: rgb(41, 3, 3);
+        }
+
+        .logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* padding-right: 20%; */
+        }
+
+        .logo img {
+            max-width: 20vw;
+            max-height: 20vh;
+        }
+
+        nav {
+            font-size: 25px;
+            letter-spacing: 5px;
+            flex-grow: 1;
+        }
+
+        ul {
+            list-style-type: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+            width: 100%;
+            flex: 1;
+            border-radius: 2px;
+            /*background-color: rgb(41, 3, 3);*/
+            /* padding: 3vh 5vw; */
+        }
+
+        ul li {
+            padding: 10px 18px;
+            margin: 14px 5px;
+            /* border: 3px double green; */
+            /* background-color: aqua; */
+            transition: all 0.5s;
+        }
+
+        ul li:hover,
+        ul li:active, ul li.active {
+            background-color: white;
+            color: rgb(41, 3, 3);
+            box-shadow: grey 0px 0px 5px 5px;
+        }
+
+        ul li a {
+            text-decoration: none;
+            color: white;
+            transition: all .5s;
+        }
+
+        ul li:hover a,
+        ul li:active a, ul li.active a {
+            color: black;
+        }
+
+        .contact {
+            margin: 5vh 5vw; font-family: Cinzel;
+        }
+
+        #contact-us {
+            text-align: center;
+            font-size: 40px;
+            color: rgb(41, 3, 3);
+            font-weight: 700;
+            letter-spacing: 16px;
+        }
+
+        .contact-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .contact-method {
+            padding: 2vh;
+            flex: 1;
+            min-width: 20vw;
+        }
+
+        .contact-method h2 {
+            color: rgb(41, 3, 3);
+        }
+
+        .contact-method a {
+            color: black;
+            font-size: 1.2em;
+            display: block;
+            margin-bottom: 2%;
+        }
+
+        .contact-method .qr-code {
+            max-width: 50%;
+            max-height: 50%;
+            width: 50%;
+            height: 50%;
+            background-color: black;
+            margin-left: 20px;
+        }
+
+
+        @media screen and (max-width: 1000px) {
+            header {
+                padding: 1% 2%;
+            }
+
+            .logo img {
+                max-width: 30vw;
+            }
+
+            nav {
+                font-size: 60px;
+                letter-spacing: 3px;
+            }
+
+            ul li {
+                padding: 25px 18px;
+                margin: 2px 5px;
+            }
+
+            .contact-method {
+                min-width: 40vw;
+            }
+
+            .contact-method a,
+            .contact-method h2 {
+                font-size: 1.8em;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="img/logo.png" alt="">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index-en.html">HOME</a></li>
+                <li><a href="gallery.html">GALLERY</a></li>
+                <li><a href="contact-en.html">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="contact">
+        <p id="contact-us">CONTACT COURSOU</p>
+        <div class="contact-container">
+            <div class="contact-method">
+                <h2>TEL</h2>
+                <a href="tel:+86 13316908444">+86 13316908444</a>
+            </div>
+            <div class="contact-method">
+                <h2>EMAIL</h2>
+                <a href="mailto:hwh6688@hotmail.com">hwh6688@hotmail.com</a>
+            </div>
+            <div class="contact-method">
+                <h2>WECHAT OFFICIAL ACCOUNT QR CODE</h2>
+                <!-- <a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzIxMDE5NTg2MA==#wechat_redirect
+" target="_blank" rel="noopener noreferrer">璞颂酒庄</a> -->
+                <img class="qr-code" src="img/logo.png" alt="qr-code">
+            </div>
+            <div class="contact-method">
+                <h2>ADDRESS: Château, Coursou, 33890 Pessac-sur-Dordogne, France</h2>
+                <a href="https://j.map.baidu.com/c8/VWI" target="_blank">BAIDU MAP</a>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5997.146804684328!2d0.10304190525929084!3d44.81593484530255!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12aaa44d6eddeaad%3A0x6fd622e81dc50951!2sSCEA%20Chateau%20Coursou%20Gfa!5e0!3m2!1sen!2sjp!4v1598517867122!5m2!1sen!2sjp"
+                    width="400" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
+                    tabindex="0">
+                </iframe>
+            </div>
+
+        </div>
+
+    </div>
+
+    <footer>
+        footer goes here
+    </footer>
+</body>
+
+</html>
